@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * execs_com - function executes user input
- * @instruct: string
+ * exec_com - executes command
+ * @instruct: command function
  * Return: void
  */
 
-void execs_com(const char *instruct)
+void exec_com(const char *instruct)
 {
 	pid_t child_pid = fork();
 
@@ -17,12 +17,27 @@ void execs_com(const char *instruct)
 	}
 	else if (child_pid == 0)
 	{
-		execlp(instruct, instruct, (char *)NULL);
-		perror("execlp");
-		exit(EXIT_FAILURE);
+	       char *args[] = { (char *)instruct, NULL };
+
+		if (execve(instruct, args, NULL) == -1)
+		{
+			perror("execve");
+			exit(EXIT_FAILURE);
+		}
 	}
 	else
 	{
 		wait(NULL);
 	}
+}
+
+/**
+ * main - main function
+ * Return: void
+ */
+
+int main(void)
+{
+	exec_com("/usr/bin/ls");
+	return (0);
 }
