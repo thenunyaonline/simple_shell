@@ -2,7 +2,7 @@
 
 /**
  * eg_prints - function prints string
- * @instruct: string to be printed
+ * @info: string to be printed
  * Return: void
  */
 
