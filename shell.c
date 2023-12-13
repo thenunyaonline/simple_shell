@@ -14,8 +14,8 @@ int main(void)
 	{
 		aparecium_display();
 		legilimens_com(instruct, sizeof(instruct));
-		execs_com(instruct);
 		token_com(instruct);
+		exec_com();
 	}
 
 	return (0);

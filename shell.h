@@ -16,5 +16,6 @@ void aparecium_display(void);
 void execs_com(const char *instruct);
 void legilimens_com(char *instruct, size_t size);
 void token_com(const char *instruct);
+void exec_com(void);
 
 #endif
