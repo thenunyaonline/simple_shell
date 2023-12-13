@@ -6,25 +6,25 @@
  * Return: void
  */
 
-void execs_com(const char *instruct)
+int execi(void)
 {
 	pid_t child_pid = fork();
-
+	int i, status;
+	array = NULL;
+	
 	if (child_pid == -1)
 	{
 		perror("fork");
-		exit(EXIT_FAILURE);
 	}
 
-	else if (child_pid == 0)
+	if (child_pid == 0)
 	{
-		execlp(instruct, instruct, (char *)NULL);
-		perror("execlp");
-		exit(EXIT_FAILURE);
+		if (execve(array[0], array, NULL) == -1)
+		perror("No such file or directory");
+		
 	}
-
 	else
 	{
-		wait(NULL);
+		wait(&status);
 	}
 }
