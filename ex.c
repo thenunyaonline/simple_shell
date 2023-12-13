@@ -29,15 +29,7 @@ void exec_com(const char *instruct)
 	{
 		wait(NULL);
 	}
-}
-
-/**
- * main - main function
- * Return: void
- */
-
-int main(void)
 {
-	exec_com("/usr/bin/ls");
+	execs_com("/bin/ls");
 	return (0);
 }

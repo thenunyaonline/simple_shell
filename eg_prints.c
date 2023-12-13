@@ -6,7 +6,7 @@
  * Return: void
  */
 
-void eg_prints(const char *instruct)
+void eg_prints(const char *info)
 {
-	write(STDOUT_FILENO, instruct, strlen(instruct));
+	write(STDOUT_FILENO, info, strlen(info));
 }
