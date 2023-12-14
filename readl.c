@@ -6,7 +6,7 @@ char *legilimens_line(void)
 	size_t len = 0;
 	ssize_t l;
 	if (isatty(STDIN_FILENO))	
-	write(STDOUT_FILENO, "$ ", 2);
+	write(STDOUT_FILENO, "elg$ ", 5);
 	l = getline(&line, &len, stdin);
 	if (l == -1)
 	{

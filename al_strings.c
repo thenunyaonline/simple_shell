@@ -16,8 +16,8 @@ char *_strdup(const char *str)
 	ptr = malloc(sizeof(char) * (len + 1));
 	if (ptr == NULL)
 		return (NULL);
-	for (i = 0; i <= len; i++)
-		ptr[i] = str[i];
+	for (j = 0; j <= len; j++)
+		ptr[j] = str[j];
 	return (ptr);
 }
 
@@ -54,17 +54,4 @@ char *_strcat(char *dest, char *src)
 	}
 	*d = *src;
 	return (dest);
-}
-
-
-
-char *_strcpy(char *dest, char *src)
-{
-	int i = 0;
-
-	while (src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
 }

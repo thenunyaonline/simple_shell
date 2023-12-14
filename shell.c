@@ -1,40 +1,34 @@
 #include "shell.h"
 
-int main(void)
+/**
+ * main - main simple shell funcion
+ * @agc: argument count
+ * @agv: arguments
+ * Return - 0
+ */
+
+int main(int agc, char **argv)
 {
-	size_t buf_size = 0;
-	char *buf = NULL;
-	char *token;
-	int status, i = 0;
-	char **array;
-	pid_t child_pid;
+	char *line = NULL, **command = NULL;
+	int status = 0;
+	(void) agc;
+	(void) argv;
 
 	while (1)
 	{
-		write(1, "elg$ ", 5);
-		getline(&buf, &buf_size, stdin);
-		token = strtok(buf, "\t\n");
-		array = malloc(sizeof(char *) * 1024);
+		line = legilimens_line(); 
+		if (line == NULL)
+		{
+			if (isatty(STDIN_FILENO))
+				write(STDOUT_FILENO, "\n", 1);
+			return (status);
+		}
 
-		while (token)
-		{
-			array[i] = token;
-			token = strtok(NULL, "\t\n");
-			i++;
-		}
-			array[i] = NULL;
-			child_pid = fork();
+		
+		command = tokenizar(line);
+		if (!command)
+			continue;
 
-		if (child_pid == 0)
-		{
-			if (execve(array[0], array, NULL) == -1)
-				perror("No such file or directory");
-		}
-		else
-		{
-			wait(&status);
-		}
-		i = 0;
-		free(array);
+		status = _execute(command, argv);
 	}
 }
