@@ -23,14 +23,14 @@ void freearray2D(char **arr)
 }
 
 /**
- * printerror - this function prints error
+ * print_error - this function prints error
  * @name: name
  * @cmd: command
  * @idx: index
- * Return: 0 
+ * Return: 0
  */
 
-void print_error(char *name,char *cmd, int idx)
+void print_error(char *name, char *cmd, int idx)
 {
 	char *index, mssg[] = ": not found";
 
@@ -59,7 +59,7 @@ char *_itoa(int n)
 	char buffer[20];
 	int i = 0;
 
-	if (n == 0 )
+	if (n == 0)
 		buffer[i++] = '0';
 	else
 	{
@@ -79,7 +79,7 @@ char *_itoa(int n)
 
 
 /**
- * reverse_String - function reverses string
+ * reverse_string - function reverses string
  * @str: string
  * @len: length of string
  * Return: 0

@@ -4,6 +4,7 @@
  * _execute - function executes comands
  * @command: inputs by user
  * @argv: argument vector
+ * @idx: index
  * Return: status
  */
 
@@ -18,7 +19,7 @@ int _execute(char **command, char **argv, int idx)
 	{
 		print_error(argv[0], command[0], idx);
 		freearray2D(command);
-		return(120);
+		return (120);
 	}
 
 	child = fork();
