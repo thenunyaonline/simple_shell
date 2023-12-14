@@ -3,8 +3,8 @@
 /**
  * main - main simple shell funcion
  * @agc: argument count
- * @agv: arguments
- * Return - 0
+ * @argv: arguments
+ * Return: 0
  */
 
 int main(int agc, char **argv)
@@ -16,7 +16,7 @@ int main(int agc, char **argv)
 
 	while (1)
 	{
-		line = legilimens_line(); 
+		line = legilimens_line();
 		if (line == NULL)
 		{
 			if (isatty(STDIN_FILENO))
@@ -24,7 +24,7 @@ int main(int agc, char **argv)
 			return (status);
 		}
 
-		
+
 		command = tokenizar(line);
 		if (!command)
 			continue;

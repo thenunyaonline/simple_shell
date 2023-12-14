@@ -1,5 +1,11 @@
 #include "shell.h"
 
+/**
+ * _strdup - function duplicates string
+ * @str: string to be duplicated
+ * Return: pointer
+ */
+
 char *_strdup(const char *str)
 {
 	char *ptr;
@@ -21,6 +27,14 @@ char *_strdup(const char *str)
 	return (ptr);
 }
 
+
+/**
+ * _strcmp - function compares strings
+ * @s1: string 1
+ * @s2: string 2
+ * Return: void
+ */
+
 int _strcmp(char *s1, char *s2)
 {
 	int cmp;
@@ -38,6 +52,12 @@ int _strcmp(char *s1, char *s2)
 }
 
 
+/**
+ * _strcat - function conctenates strings
+ * @dest: destination string
+ * @src: source string
+ * Return: destination
+ */
 
 char *_strcat(char *dest, char *src)
 {
@@ -45,7 +65,7 @@ char *_strcat(char *dest, char *src)
 
 	while (*d)
 		d++;
-	
+
 	while (*src)
 	{
 		*d = *src;

@@ -1,15 +1,21 @@
 #include "shell.h"
 
+/**
+ * tokenizar - function creates tokens
+ * @line: commands from user
+ * Return: void
+ */
+
 char **tokenizar(char *line)
 {
-	char *token = NULL, *tmp = NULL; 
+	char *token = NULL, *tmp = NULL;
 	char **command = NULL;
 	int cpt = 0, i = 0;
 
 	if (!line)
 		return (NULL);
 	tmp = _strdup(line);
-	
+
 	token = strtok(tmp, DELIM);
 	if (token == NULL)
 	{
@@ -41,5 +47,5 @@ char **tokenizar(char *line)
 	}
 	free(line), line = NULL;
 	command[i] = NULL;
-	return (command);	
+	return (command);
 }

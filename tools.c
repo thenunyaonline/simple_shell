@@ -1,8 +1,15 @@
 #include "shell.h"
 
+/**
+ * freearray2D - function frees array
+ * @arr: array to be freed
+ * Return: void
+ */
+
 void freearray2D(char **arr)
 {
 	int i;
+
 	if (!arr)
 		return;
 
