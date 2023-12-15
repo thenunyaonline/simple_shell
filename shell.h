@@ -20,7 +20,7 @@ void freearray2D(char **arr);
 int _execute(char **command, char **argv, int idx);
 int main(int agc, char **argv);
 char *_getenv(char *var);
-char *_handlepath(char *command);
+char *_getpath(char *command);
 
 int _builtin(char *command);
 void handles_builtin(char **command, char **argv, int status, int idx);

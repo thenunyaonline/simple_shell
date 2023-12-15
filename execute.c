@@ -14,7 +14,7 @@ int _execute(char **command, char **argv, int idx)
 	pid_t child;
 	int status;
 
-	full_cmd = _handlepath(command[0]);
+	full_cmd = _getpath(command[0]);
 	if (!full_cmd)
 	{
 		print_error(argv[0], command[0], idx);

@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * _handlepath - this function handles the path
+ * _getpath - this function handles the path
  * @command: user input
  * Return: 0
  */
 
-char *_handlepath(char *command)
+char *_getpath(char *command)
 {
 	char *path_env, *full_cmd, *dir;
 	int i;

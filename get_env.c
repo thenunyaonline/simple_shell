@@ -18,8 +18,8 @@ char *_getenv(char *var)
 		if (_strcmp(key, var) == 0)
 		{
 			value = strtok(NULL, "\n");
-			free(tmp);
 			env = _strdup(value);
+			free(tmp);
 			return (env);
 		}
 		free(tmp), tmp = NULL;
