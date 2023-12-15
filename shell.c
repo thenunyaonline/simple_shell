@@ -29,6 +29,10 @@ int main(int agc, char **argv)
 		if (!command)
 			continue;
 
+		if (_builtin(command[0]))
+			handles_builtin(command, argv, status, idx);
+		else
+
 		status = _execute(command, argv, idx);
 	}
 }

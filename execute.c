@@ -27,8 +27,8 @@ int _execute(char **command, char **argv, int idx)
 	{
 		if (execve(full_cmd, command, environ) == -1)
 		{
-			free(full_cmd), full_cmd = NULL;
 			freearray2D(command);
+			free(full_cmd), full_cmd = NULL;
 		}
 	}
 	else

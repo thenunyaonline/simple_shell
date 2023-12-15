@@ -18,7 +18,6 @@ void freearray2D(char **arr)
 		free(arr[i]);
 		arr[i] = NULL;
 	}
-
 	free(arr), arr = NULL;
 }
 
