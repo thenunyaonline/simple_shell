@@ -1,5 +1,11 @@
 #include "shell.h"
 
+/**
+ * _builtin - function takes in certain command
+ * @command: user input
+ * Return: 0
+ */
+
 int _builtin(char *command)
 {
 	char *builtins[] = {"exit", "env", "setenv", "cd", NULL};
@@ -13,6 +19,15 @@ int _builtin(char *command)
 	return (0);
 }
 
+/**
+ * handles_builtin - function handles commands
+ * @command: user input
+ * @argv: argument vector
+ * @status: status
+ * @idx: index
+ * Return: 0
+ */
+
 void handles_builtin(char **command, char **argv, int status, int idx)
 {
 	(void) argv;
@@ -25,6 +40,12 @@ void handles_builtin(char **command, char **argv, int status, int idx)
 		print_env(command, status);
 }
 
+/**
+ * exit_shell - function exits shell
+ * @command: user input
+ * @status: status
+ * Return: 0
+ */
 
 void exit_shell(char **command, int status)
 {
@@ -32,6 +53,12 @@ void exit_shell(char **command, int status)
 	exit(status);
 }
 
+/**
+ * print_env - function prints environment
+ * @command: user input
+ * @status: status
+ * Return: 0
+ */
 
 void print_env(char **command, int status)
 {
